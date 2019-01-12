@@ -1,3 +1,34 @@
 <resources>
     <string name="app_name">Freedom Learning</string>
+    <string name="btn_login">Go</string>
+    <string name="login_with">Sign in with</string>
+    <string name="create_an_account"><u>Create an account?</u></string>
+    <string name="forgot_passowrd"><u>Forgot password?</u></string>
+    <string name="login">SIGN IN</string>
+    <string name="username">Username</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="confirm_password">Confirm password</string>
+    <string name="back">Back</string>
+    <string name="sign_up">Sign Up</string>
+
+    <string name="facebook_app_id">591888507948523</string>
+    <string name="fb_login_protocol_scheme">fb591888507948523</string>
+
+    <string name="login_success">Sign In Successfully</string>
+    <string name="login_failed">Sign In Attempt failed</string>
+    <string name="login_cancel">Sign In Cancelled</string>
+    <string name="connection_failed">Connection Failed</string>
+
+    <string name="invalid_username">Invalid Username.Username must has from 6 to 20 characters.</string>
+    <string name="invalid_email">Invalid Email.</string>
+    <string name="invalid_password">Invalid Password. Password must has greater than or equal 6 characters.</string>
+    <string name="pass_not_matching">Confirm password does not match</string>
+
+    <string name="sign_up_successful">Sign Up Successful</string>
+    <string name="sign_up_failed">Sign Up Failed</string>
+
+    <string name="connected">Your device is connected</string>
+    <string name="not_connected">Your device is not connected</string>
+    <string name="reset_chart">Reset</string>
 </resources>
