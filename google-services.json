@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "377508944459",
+    "firebase_url": "https://freedom-learning.firebaseio.com",
+    "project_id": "freedom-learning",
+    "storage_bucket": "freedom-learning.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:377508944459:android:524c2d397a5e2620",
+        "android_client_info": {
+          "package_name": "freedom.com.freedomlearning"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "377508944459-glbcirnfr96ma7igg3khv1cgun0d4n7v.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "freedom.com.freedomlearning",
+            "certificate_hash": "ac4207a65417cacb98efaee10a7779862ca27471"
+          }
+        },
+        {
+          "client_id": "377508944459-dgm5e4vdp8igv9q3vonfod04s6iu8g6p.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDQ-iZ6exwljjZJm4mfJpmWBfiE7BTOX8A"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "377508944459-o6tl2uvibij93n2d6qsub6gv3oke8men.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

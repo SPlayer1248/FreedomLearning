@@ -12,8 +12,9 @@
     <string name="back">Back</string>
     <string name="sign_up">Sign Up</string>
 
-    <string name="facebook_app_id">591888507948523</string>
-    <string name="fb_login_protocol_scheme">fb591888507948523</string>
+    <string name="facebook_app_id">948441298679724</string>
+    <string name="fb_login_protocol_scheme">fb948441298679724</string>
+
 
     <string name="login_success">Sign In Successfully</string>
     <string name="login_failed">Sign In Attempt failed</string>

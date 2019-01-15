@@ -35,13 +35,18 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.ValueEventListener;
 
 public class SigninFacebook {
+    private static final String TAG = SigninFacebook.class.getSimpleName();
+
     private LoginManager loginManager;
     public CallbackManager callbackManager;
     private Activity mActivity;
     private FirebaseAuth mAuth;
     private DatabaseService mData = DatabaseService.getInstance();
     private ProgressDialog progressDialog;
-    private String email = "", userName = "", avatar = "", idUser;
+    private static String email = "";
+    private static String userName = "";
+    private static String avatar = "";
+    private static String idUser;
 
     public SigninFacebook(LoginManager loginManager, CallbackManager callbackManager, Activity mActivity) {
         this.loginManager = loginManager;
@@ -53,22 +58,25 @@ public class SigninFacebook {
 
     public void signinFacebook() {
 
-        loginManager.logInWithReadPermissions(mActivity, Arrays.asList("email", "public_profile", "user_friends"));
+        loginManager.logInWithReadPermissions(mActivity, Arrays.asList("email", "public_profile"));
         loginManager.registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
             @Override
             public void onSuccess(LoginResult loginResult) {
 //                handleFacebookAccessToken(loginResult.getAccessToken());
-                Toast.makeText(mActivity, R.string.login_success, Toast.LENGTH_SHORT).show();
+                Toast.makeText(mActivity, "Success", Toast.LENGTH_SHORT).show();
+                Log.d(TAG, String.valueOf(R.string.login_success));
             }
 
             @Override
             public void onCancel() {
                 Toast.makeText(mActivity, R.string.login_cancel, Toast.LENGTH_SHORT).show();
+                Log.d(TAG, String.valueOf(R.string.login_cancel));
             }
 
             @Override
             public void onError(FacebookException error) {
                 Toast.makeText(mActivity, R.string.login_failed, Toast.LENGTH_SHORT).show();
+                Log.d(TAG, String.valueOf(R.string.login_failed));
             }
         });
     }
