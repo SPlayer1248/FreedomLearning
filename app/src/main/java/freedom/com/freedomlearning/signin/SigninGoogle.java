@@ -60,7 +60,7 @@ public class SigninGoogle {
     public static void firebaseAuthWithGoogle(GoogleSignInAccount googleSignInAccount) {
         Log.d(TAG, "firebaseAuthWithGoogle: " + googleSignInAccount.getId());
         //Display Progress Dialog
-        showProgress();
+//        showProgress();
 
         AuthCredential credential = GoogleAuthProvider.getCredential(googleSignInAccount.getIdToken(), null);
         mAuth.signInWithCredential(credential)
