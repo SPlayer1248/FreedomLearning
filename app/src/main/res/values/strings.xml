@@ -12,14 +12,36 @@
     <string name="back">Back</string>
     <string name="sign_up">Sign Up</string>
 
-    <string name="facebook_app_id">948441298679724</string>
-    <string name="fb_login_protocol_scheme">fb948441298679724</string>
+
+    <string name="fui_sign_in_with_google" translation_description="Sign in button text">Sign in with Google</string>
+    <string name="fui_sign_in_with_facebook" translation_description="Sign in button text">Sign in with Facebook</string>
+    <string name="fui_sign_in_anonymously" translation_description="Continue as guest">Continue as guest</string>
+
+    <!-- Email common-->
+    <string name="fui_next_default" translation_description="Button text to continue">Next</string>
+    <string name="fui_email_hint" translation_description="Hint in email input field">Email</string>
+    <string name="fui_phone_hint" translation_description="Hint for phone input field">Phone Number</string>
+    <string name="fui_password_hint" translation_description="Hint for password input field">Password</string>
+    <string name="fui_required_field" translation_description="Inline error for required field">You can\'t leave this empty.</string>
+    <string name="fui_invalid_email_address" translation_description="Inline error for invalid email address">That email address isn\'t correct</string>
+    <string name="fui_missing_email_address" translation_description="Inline error for empty email address in input field">Enter your email address to continue</string>
+    <string name="fui_progress_dialog_checking_accounts" translation_description="Progress dialog text while checking for existing accounts">Checking for existing accounts…</string>
 
 
     <string name="login_success">Sign In Successfully</string>
+    <string name="create_firebase_user_success">Create Firebase user fail</string>
+    <string name="create_firebase_user_fail">Create Firebase user fail</string>
     <string name="login_failed">Sign In Attempt failed</string>
     <string name="login_cancel">Sign In Cancelled</string>
     <string name="connection_failed">Connection Failed</string>
+
+    <!-- Common -->
+    <string name="fui_default_toolbar_title" translatable="false">@string/app_name</string>
+    <string name="fui_progress_dialog_loading" translation_description="Loading text in dialog">Loading…</string>
+    <string name="fui_sign_in_default" translation_description="Button text to sign in">Sign in</string>
+    <string name="fui_cancel" translation_description="Button text to cancel">Cancel</string>
+    <string name="fui_continue" translation_description="Button text to continue">Continue</string>
+
 
     <string name="invalid_username">Invalid Username.Username must has from 6 to 20 characters.</string>
     <string name="invalid_email">Invalid Email.</string>

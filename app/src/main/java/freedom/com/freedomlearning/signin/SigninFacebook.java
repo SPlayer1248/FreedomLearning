@@ -62,8 +62,8 @@ public class SigninFacebook {
         loginManager.registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
             @Override
             public void onSuccess(LoginResult loginResult) {
-//                handleFacebookAccessToken(loginResult.getAccessToken());
-                Toast.makeText(mActivity, "Success", Toast.LENGTH_SHORT).show();
+                handleFacebookAccessToken(loginResult.getAccessToken());
+                Toast.makeText(mActivity, R.string.login_success, Toast.LENGTH_SHORT).show();
                 Log.d(TAG, String.valueOf(R.string.login_success));
             }
 
@@ -82,7 +82,8 @@ public class SigninFacebook {
     }
 
     private void handleFacebookAccessToken(AccessToken token) {
-        showProgress();
+//        showProgress();
+        mAuth = FirebaseAuth.getInstance();
         AuthCredential credential = FacebookAuthProvider.getCredential(token.getToken());
         mAuth.signInWithCredential(credential).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
@@ -94,7 +95,8 @@ public class SigninFacebook {
                     avatar = task.getResult().getUser().getPhotoUrl().toString();
                     idUser = task.getResult().getUser().getUid();
                     User user = new User(idUser, userName, email, avatar);
-//                    createUserOnFireBase(user);
+                    Toast.makeText(mActivity, "Done", Toast.LENGTH_SHORT).show();
+                    createUserOnFireBase(user);
 //                    Intent intent = new Intent(mActivity, FeatureActivity.class);
 //                    intent.putExtra(Constants.USER_ID, idUser);
 //                    mActivity.startActivity(intent);
@@ -117,10 +119,34 @@ public class SigninFacebook {
         });
     }
 
-    private void showProgress() {
-        progressDialog.setCancelable(false);
-        progressDialog.show();
+    private void createUserOnFireBase(final User user) {
+        final DatabaseReference userNode = mData.createDatabase("User").child(user.getId());
+        userNode.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                if (dataSnapshot.getValue() == null) {
+                    userNode.setValue(user);
+//                    Toast.makeText(mActivity, mActivity.getResources().getString(R.string.create_firebase_user_success), Toast.LENGTH_SHORT).show();
+//                    mActivity.startActivity(new Intent(mActivity, CustomMapsActivity.class));
+                } else {
+                    hideProgress();
+//                    Toast.makeText(mActivity, mActivity.getResources().getString(R.string.create_firebase_user_fail), Toast.LENGTH_SHORT).show();
+//                    Log.d(TAG,"F")
+//                    mActivity.startActivity(new Intent(mActivity, CustomMapsActivity.class));
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
     }
+
+//    private void showProgress() {
+//        progressDialog.setCancelable(false);
+//        progressDialog.show();
+//    }
 
     private void hideProgress() {
         progressDialog.hide();

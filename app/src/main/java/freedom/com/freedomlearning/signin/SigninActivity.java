@@ -59,8 +59,8 @@ public class SigninActivity extends AppCompatActivity {
         callbackManager = CallbackManager.Factory.create();
         signinFacebook = new SigninFacebook(loginManager, callbackManager, this);
 
-        //login google
-//        signinGoogle = new SigninGoogle(getString(R.string.default_web_client_id), this);
+//        login google
+        signinGoogle = new SigninGoogle(getString(R.string.default_web_client_id), this);
 
         mAuth = mData.getFirebaseAuth();
     }
@@ -70,6 +70,7 @@ public class SigninActivity extends AppCompatActivity {
         imgFacebook.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Log.d(TAG, "fbxxx: Clicked");
                 signinFacebook.signinFacebook();
             }
         });
@@ -95,6 +96,7 @@ public class SigninActivity extends AppCompatActivity {
                 // Google Sign In was successful, authenticate with Firebase
                 GoogleSignInAccount account = task.getResult(ApiException.class);
                 signinGoogle.firebaseAuthWithGoogle(account);
+                Log.w(TAG, "Google sign in done!");
             } catch (ApiException e) {
                 // Google Sign In failed, update UI appropriately
                 Log.w(TAG, "Google sign in failed", e);
