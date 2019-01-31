@@ -31,7 +31,7 @@ public class SigninActivity extends AppCompatActivity {
 
     public static final String TAG = SigninActivity.class.getSimpleName();
 
-    private ImageView imgFacebook;
+    private ImageView imgFacebook; 
     private ImageView imgGoogle;
     private SigninFacebook signinFacebook;
     private SigninGoogle signinGoogle;
